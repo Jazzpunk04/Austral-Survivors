@@ -1,0 +1,102 @@
+using System.Collections;
+using Combat;
+using Controllers;
+using Movement;
+using MovementPolicies;
+using UnityEngine;
+
+namespace Enemies
+{
+    [RequireComponent(typeof(EnemyController))]
+    [RequireComponent(typeof(EnemyAttack))]
+    [RequireComponent(typeof(MovementHandler))]
+    public class Enemy : MonoBehaviour
+    {
+        [SerializeField] private EnemyData enemyData;
+        [SerializeField] private Transform target;
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private EnemyController controller;
+        [SerializeField] private EnemyAttack attack;
+        [SerializeField] private MovementHandler movementHandler;
+        [SerializeField] private MovementPolicy movementPolicy;
+
+        public EnemyData Data => enemyData;
+        public Transform Target => target;
+        public SpriteRenderer SpriteRenderer => spriteRenderer;
+        public EnemyController Controller => controller;
+        public EnemyAttack Attack => attack;
+        public MovementHandler MovementHandler => movementHandler;
+        public MovementPolicy MovementPolicy => movementPolicy;
+
+        private void Awake()
+        {
+            ResolveReferences();
+            ApplyData();
+        }
+
+        private void OnValidate()
+        {
+            ResolveReferences();
+            ApplyData();
+        }
+
+        private void ResolveReferences()
+        {
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            }
+
+            if (controller == null)
+            {
+                controller = GetComponent<EnemyController>();
+            }
+
+            if (attack == null)
+            {
+                attack = GetComponent<EnemyAttack>();
+            }
+
+            if (movementHandler == null)
+            {
+                movementHandler = GetComponent<MovementHandler>();
+            }
+        }
+
+        private void ApplyData()
+        {
+            if (enemyData == null || spriteRenderer == null || enemyData.sprite == null)
+            {
+                return;
+            }
+
+            spriteRenderer.sprite = enemyData.sprite;
+        }
+        
+        private Coroutine _spriteRoutine;
+
+        public void ShowAttackSprite(AttackData attackData)
+        {
+            if (attackData == null || enemyData.attackSprite == null || spriteRenderer == null)
+            {
+                return;
+            }
+
+            if (_spriteRoutine != null)
+            {
+                StopCoroutine(_spriteRoutine);
+            }
+
+            _spriteRoutine = StartCoroutine(ShowAttackSpriteRoutine(attackData));
+        }
+
+        private IEnumerator ShowAttackSpriteRoutine(AttackData attackData)
+        {
+            spriteRenderer.sprite = enemyData.attackSprite;
+            yield return new WaitForSeconds(attackData.attackSpriteDuration);
+            ApplyData();
+            _spriteRoutine = null;
+        }
+
+    }
+}
