@@ -1,6 +1,7 @@
 using System.Collections;
 using Combat;
 using Controllers;
+using Health;
 using Movement;
 using MovementPolicies;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace Enemies
         [SerializeField] private EnemyAttack attack;
         [SerializeField] private MovementHandler movementHandler;
         [SerializeField] private MovementPolicy movementPolicy;
+        [SerializeField] private EnemyHealth enemyHealth;
 
         public EnemyData Data => enemyData;
         public Transform Target => target;
@@ -32,6 +34,10 @@ namespace Enemies
         {
             ResolveReferences();
             ApplyData();
+            if (enemyHealth != null && enemyData != null)
+            {
+                enemyHealth.SetUp(enemyData.maxHealth, enemyData.experienceReward);
+            }
         }
 
         private void OnValidate()
@@ -60,6 +66,11 @@ namespace Enemies
             if (movementHandler == null)
             {
                 movementHandler = GetComponent<MovementHandler>();
+            }
+
+            if (enemyHealth == null)
+            {
+                enemyHealth = GetComponent<EnemyHealth>();
             }
         }
 

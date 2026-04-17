@@ -12,6 +12,14 @@ public class AttackData : ScriptableObject
     [Header("Range")]
     [Min(0f)] public float attackRange = 1.25f;
 
+    [Header("Targeting")]
+    public LayerMask targetLayer = ~0;
+
+    [Header("Projectile")]
+    public GameObject projectilePrefab;
+    [Min(0f)] public float projectileSpeed = 8f;
+    [Min(0f)] public float projectileLifetime = 3f;
+
     [Header("Timing")]
     [Min(0f)] public float cooldown = 1f;
 

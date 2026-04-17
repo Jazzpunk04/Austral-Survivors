@@ -10,6 +10,7 @@ public class EnemyData : ScriptableObject
 
     [Header("Stats")]
     [Min(1)] public int maxHealth = 10;
+    [Min(0)] public int experienceReward = 1;
 
     [Header("Attack")]
     public AttackData attackData;

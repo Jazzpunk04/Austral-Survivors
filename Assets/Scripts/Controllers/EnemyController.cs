@@ -41,11 +41,6 @@ namespace Controllers
            
             Vector2 direction = enemy.MovementPolicy.GetDirection(transform, enemy.Target);
 
-            if (enemy.SpriteRenderer != null)
-            {
-                enemy.SpriteRenderer.color = direction.Equals(Vector2.zero) ? Color.white : Color.red;
-            }
-
             enemy.MovementHandler.SetDirection(direction);
         }
     }

@@ -17,9 +17,14 @@ namespace Health
 
         public void TakeDamage(int damage)
         {
+            TakeDamage(damage, null);
+        }
+
+        public void TakeDamage(int damage, Transform damageSource)
+        {
             _currentHealth -= damage;
             hpBar.fillAmount = _currentHealth / (float)maxHealth;
-            Debug.Log($"Player took {damage} damage. Current HP: {_currentHealth}");
+            hpBar.color = _currentHealth <= 5 ? Color.yellow : Color.green;
 
             if (_currentHealth <= 0)
             {

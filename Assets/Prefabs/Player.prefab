@@ -103,6 +103,8 @@ GameObject:
   - component: {fileID: 5671074406898664891}
   - component: {fileID: 7472584349337415853}
   - component: {fileID: 758832324033696898}
+  - component: {fileID: 6791589522397224104}
+  - component: {fileID: 4483194759283782236}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -168,6 +170,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health.PlayerHealth
   maxHealth: 10
   hpBar: {fileID: 4036100389462487632}
+--- !u!114 &6791589522397224104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188277261981144186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8d0ad9318f4f5293f7a602648cba89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Combat.PlayerAttack
+  equippedAttacks:
+  - {fileID: 11400000, guid: ebfdfa589b2e1a641871c3f04454bf5d, type: 2}
+--- !u!114 &4483194759283782236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188277261981144186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d152b9ba11d4d9d80efc5e62bfbe791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Experience.PlayerExperience
+  currentExperience: 0
 --- !u!1 &2657018373559057000
 GameObject:
   m_ObjectHideFlags: 0
