@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5212e07066b44d9e87d85d3d71ac64ba, type: 3}
-  m_Name: Skeleton
+  m_Name: SkeletonData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: Skeleton
   sprite: {fileID: -8054786874749993974, guid: 9009c5889e1ca0a41b8a9e547cef8d42, type: 3}

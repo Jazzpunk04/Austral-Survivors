@@ -1,4 +1,5 @@
 using Experience;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ namespace Health
     public class EnemyHealth : MonoBehaviour, IDamageable
     {
         [SerializeField] private Image hpBar;
+        public event Action<EnemyHealth> Died;
 
         private int _maxHealth = 10;
         private int _experienceReward = 1;
@@ -40,6 +42,7 @@ namespace Health
             if (_currentHealth <= 0)
             {
                 _isDead = true;
+                Died?.Invoke(this);
                 AwardExperience(damageSource);
                 Destroy(gameObject);
             }

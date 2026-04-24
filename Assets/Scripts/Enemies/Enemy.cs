@@ -109,5 +109,10 @@ namespace Enemies
             _spriteRoutine = null;
         }
 
+        public void SetTarget(Transform newTarget)
+        {
+            target = newTarget;
+        }
+
     }
 }
