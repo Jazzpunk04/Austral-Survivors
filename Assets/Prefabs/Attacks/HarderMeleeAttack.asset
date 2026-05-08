@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackData
   attackName: Harder Melee Attack
   damage: 2
+  damagePerLevel: 1
   attackRange: 1.25
   targetLayer:
     serializedVersion: 2
@@ -22,4 +23,6 @@ MonoBehaviour:
   projectileSpeed: 8
   projectileLifetime: 3
   cooldown: 1.2
+  cooldownReductionPerLevel: 0.1
+  minimumCooldown: 0.1
   attackSpriteDuration: 0.15

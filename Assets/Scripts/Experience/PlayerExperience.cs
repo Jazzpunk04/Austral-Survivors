@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Experience
@@ -5,8 +6,15 @@ namespace Experience
     public class PlayerExperience : MonoBehaviour
     {
         [SerializeField, Min(0)] private int currentExperience;
+        [SerializeField, Min(1)] private int currentLevel = 1;
+        [SerializeField, Min(1)] private int experienceToNextLevel = 5;
+        [SerializeField, Min(0)] private int experiencePerLevelIncrease = 5;
 
         public int CurrentExperience => currentExperience;
+        public int CurrentLevel => currentLevel;
+        public int ExperienceToNextLevel => experienceToNextLevel;
+
+        public event Action<int> LeveledUp;
 
         public void AddExperience(int amount)
         {
@@ -16,7 +24,19 @@ namespace Experience
             }
 
             currentExperience += amount;
-            Debug.Log($"Player gained {amount} experience. Total: {currentExperience}", this);
+            ProcessLevelUps();
+        }
+
+        private void ProcessLevelUps()
+        {
+            while (currentExperience >= experienceToNextLevel)
+            {
+                currentExperience -= experienceToNextLevel;
+                currentLevel++;
+                experienceToNextLevel += experiencePerLevelIncrease;
+
+                LeveledUp?.Invoke(currentLevel);
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackData
   attackName: Range Attack
   damage: 1
+  damagePerLevel: 1
   attackRange: 6
   targetLayer:
     serializedVersion: 2
@@ -23,4 +24,6 @@ MonoBehaviour:
   projectileLifetime: 3
   projectileHitRadius: 0.25
   cooldown: 1
+  cooldownReductionPerLevel: 0.1
+  minimumCooldown: 0.1
   attackSpriteDuration: 0.15
