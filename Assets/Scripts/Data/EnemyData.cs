@@ -5,8 +5,11 @@ public class EnemyData : ScriptableObject
 {
     [Header("General")]
     public string enemyName;
+
+    [Header("Visuals")]
     public Sprite sprite;
     public Sprite attackSprite;
+    public RuntimeAnimatorController animatorController;
 
     [Header("Stats")]
     [Min(1)] public int maxHealth = 10;

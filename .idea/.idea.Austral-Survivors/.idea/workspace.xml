@@ -11,27 +11,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abe73d2b-80d3-4d7d-ab0e-013cf28a6e64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerStats.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerStats.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Experience/LevelUpPopupUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Experience/LevelUpPopupUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Experience/LevelUpPopupView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Experience/LevelUpPopupView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Experience/LevelUpWeaponOptionView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Experience/LevelUpWeaponOptionView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Austral-Survivors/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Austral-Survivors/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Attacks/HarderMeleeAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Attacks/HarderMeleeAttack.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Attacks/MeleeAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Attacks/MeleeAttack.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Attacks/RangeAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Attacks/RangeAttack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RedSkeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RedSkeleton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RedSkeletonData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/RedSkeletonData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Skeleton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SkeletonData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SkeletonData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/EnemyAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Combat/PlayerAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Combat/PlayerAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/AttackData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/AttackData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experience/PlayerExperience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experience/PlayerExperience.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/MovementHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/MovementHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/Sprites/UI_Flat_Frame01a.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/Sprites/UI_Flat_Frame01a.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/Sprites/UI_Flat_Frame03a.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/Sprites/UI_Flat_Frame03a.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/EnemyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton1_death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton1_death.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton1_idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton1_idle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton1_movement.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton1_movement.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton1_take_damage.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton1_take_damage.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_attack.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_attack.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_death.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_death2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_death2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_idle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_movemen.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_movemen.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_take_damage.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Enemies/Skeleton/enemies-skeleton2_take_damage.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Down.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Left_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Left_Down.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Left_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Left_Up.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Right_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Right_Down.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Right_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Right_Up.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Dash/Dash_Up.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Down.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Left_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Left_Down.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Left_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Left_Up.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Right_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Right_Down.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Right_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Right_Up.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Player/Female/Walk/walk_Up.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +55,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1" />
+    <option name="cachedIndexableFilesCount" value="2" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -150,7 +166,8 @@
       <workItem from="1776387147745" duration="3289000" />
       <workItem from="1777068038972" duration="200000" />
       <workItem from="1777068278223" duration="3526000" />
-      <workItem from="1778275747693" duration="4808000" />
+      <workItem from="1778275747693" duration="5095000" />
+      <workItem from="1778869197758" duration="5450000" />
     </task>
     <servers />
   </component>

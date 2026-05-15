@@ -1,3 +1,4 @@
+using System;
 using Enemies;
 using Health;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace Combat
         private Enemy enemy;
 
         private float _nextAttackTime;
+
+        public event Action<Vector2, float> AttackPerformed;
 
         private void Awake()
         {
@@ -52,8 +55,15 @@ namespace Combat
                 return false;
             }
 
+            Vector2 attackDirection = ((Vector2)enemy.Target.position - (Vector2)transform.position).normalized;
+            if (attackDirection == Vector2.zero)
+            {
+                attackDirection = Vector2.down;
+            }
+
             damageable.TakeDamage(attackData.damage);
             enemy.ShowAttackSprite(attackData);
+            AttackPerformed?.Invoke(attackDirection, attackData.attackSpriteDuration);
             _nextAttackTime = Time.time + attackData.cooldown;
             return true;
         }
