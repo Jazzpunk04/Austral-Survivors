@@ -18,6 +18,8 @@ namespace Experience
         private int _pendingLevelUps;
         private bool _isShowing;
 
+        public IReadOnlyList<AttackData> AvailableAttacks => availableAttacks;
+
         private void Awake()
         {
             if (playerExperience == null)

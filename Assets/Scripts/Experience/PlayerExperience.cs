@@ -27,6 +27,13 @@ namespace Experience
             ProcessLevelUps();
         }
 
+        public void RestoreState(int savedExperience, int savedLevel, int savedExperienceToNextLevel)
+        {
+            currentExperience = Mathf.Max(0, savedExperience);
+            currentLevel = Mathf.Max(1, savedLevel);
+            experienceToNextLevel = Mathf.Max(1, savedExperienceToNextLevel);
+        }
+
         private void ProcessLevelUps()
         {
             while (currentExperience >= experienceToNextLevel)

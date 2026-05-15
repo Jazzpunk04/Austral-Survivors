@@ -57,6 +57,22 @@ namespace Data
             StatsChanged?.Invoke(this);
         }
 
+        public void RefreshFromExperience()
+        {
+            if (_playerExperience == null)
+            {
+                _playerExperience = GetComponent<PlayerExperience>();
+            }
+
+            if (_playerExperience == null)
+            {
+                return;
+            }
+
+            ApplyLevel(_playerExperience.CurrentLevel);
+            StatsChanged?.Invoke(this);
+        }
+
         private void ApplyLevel(int newLevel)
         {
             _level = Mathf.Max(1, newLevel);

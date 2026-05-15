@@ -21,27 +21,55 @@ namespace Waves
         [SerializeField] private List<Transform> spawnPoints = new();
 
         private readonly HashSet<EnemyHealth> _aliveEnemies = new();
+        private int _currentWaveIndex;
+        private int _completedWaveCount;
+        private bool _allWavesCompleted;
 
-        private void Start()
+        public int CurrentWaveIndex => _currentWaveIndex;
+        public int CompletedWaveCount => _completedWaveCount;
+        public bool AllWavesCompleted => _allWavesCompleted;
+
+        private IEnumerator Start()
         {
+            yield return null;
+
+            GameStateManager.ConsumeContinueStateIfNeeded();
+
             ResolvePlayerTarget();
             StartCoroutine(RunWaveLoop());
         }
 
         private IEnumerator RunWaveLoop()
         {
-            for (int i = 0; i < waves.Count; i++)
+            if (_allWavesCompleted)
             {
+                yield break;
+            }
+
+            for (int i = Mathf.Clamp(_currentWaveIndex, 0, waves.Count); i < waves.Count; i++)
+            {
+                _currentWaveIndex = i;
                 StartCoroutine(SpawnWave(waves[i]));
 
                 yield return new WaitUntil(() => _aliveEnemies.Count == 0);
 
                 bool isLastWave = i == waves.Count - 1;
+                _completedWaveCount = Mathf.Max(_completedWaveCount, i + 1);
+                _allWavesCompleted = isLastWave;
+                GameStateManager.SaveRoundFinished(i, i + 1, isLastWave);
+
                 if (!isLastWave)
                 {
                     yield return new WaitForSeconds(delayBetweenWaves);
                 }
             }
+        }
+
+        public void RestoreState(int currentWaveIndex, int completedWaveCount, bool allWavesCompleted)
+        {
+            _currentWaveIndex = Mathf.Clamp(currentWaveIndex, 0, waves.Count);
+            _completedWaveCount = Mathf.Clamp(completedWaveCount, 0, waves.Count);
+            _allWavesCompleted = allWavesCompleted;
         }
 
         private IEnumerator SpawnWave(WaveData wave)

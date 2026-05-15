@@ -12,6 +12,9 @@ namespace Health
 
         private int _currentHealth;
 
+        public int CurrentHealth => _currentHealth;
+        public int MaxHealth => maxHealth;
+
         private void Awake()
         {
             if (playerStats == null)
@@ -74,6 +77,13 @@ namespace Health
         public void HealToFull()
         {
             _currentHealth = maxHealth;
+            UpdateHpBar();
+        }
+
+        public void RestoreState(int savedCurrentHealth, int savedMaxHealth)
+        {
+            maxHealth = Mathf.Max(1, savedMaxHealth);
+            _currentHealth = Mathf.Clamp(savedCurrentHealth, 0, maxHealth);
             UpdateHpBar();
         }
 

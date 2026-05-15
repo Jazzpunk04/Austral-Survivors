@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RangeAttack
   m_EditorClassIdentifier: Assembly-CSharp::AttackData
   attackName: Range Attack
-  damage: 1
+  damage: 9999
   damagePerLevel: 1
   attackRange: 6
   targetLayer:
@@ -22,7 +22,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2773571959253458625, guid: de116e83ac0ee8e4390336084a1100cd, type: 3}
   projectileSpeed: 8
   projectileLifetime: 3
-  projectileHitRadius: 0.25
   cooldown: 1
   cooldownReductionPerLevel: 0.1
   minimumCooldown: 0.1
