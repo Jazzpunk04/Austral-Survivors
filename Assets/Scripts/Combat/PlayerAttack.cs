@@ -15,6 +15,7 @@ namespace Combat
         private readonly List<int> _attackLevels = new();
 
         public event Action<Vector2, float> AttackPerformed;
+        public IReadOnlyList<AttackData> EquippedAttacks => equippedAttacks;
 
         private void Awake()
         {
@@ -89,6 +90,56 @@ namespace Combat
         {
             int index = equippedAttacks.IndexOf(attackData);
             return index >= 0 && index < _attackLevels.Count ? _attackLevels[index] : 0;
+        }
+
+        public List<WeaponState> CaptureWeapons()
+        {
+            SyncCooldownSlots();
+
+            List<WeaponState> weapons = new();
+            for (int i = 0; i < equippedAttacks.Count; i++)
+            {
+                AttackData attackData = equippedAttacks[i];
+                if (attackData == null)
+                {
+                    continue;
+                }
+
+                weapons.Add(new WeaponState
+                {
+                    id = GetAttackId(attackData),
+                    level = Mathf.Max(1, _attackLevels[i])
+                });
+            }
+
+            return weapons;
+        }
+
+        public void RestoreWeapons(IReadOnlyList<WeaponState> savedWeapons, IReadOnlyList<AttackData> knownAttacks)
+        {
+            if (savedWeapons == null)
+            {
+                return;
+            }
+
+            equippedAttacks.Clear();
+            _attackLevels.Clear();
+            _nextAttackTimes.Clear();
+
+            for (int i = 0; i < savedWeapons.Count; i++)
+            {
+                WeaponState savedWeapon = savedWeapons[i];
+                AttackData attackData = FindAttackById(savedWeapon.id, knownAttacks);
+                if (attackData == null)
+                {
+                    Debug.LogWarning($"Saved weapon '{savedWeapon.id}' could not be restored because no matching AttackData was found.", this);
+                    continue;
+                }
+
+                equippedAttacks.Add(attackData);
+                _attackLevels.Add(Mathf.Max(1, savedWeapon.level));
+                _nextAttackTimes.Add(0f);
+            }
         }
 
         public int GetAttackDamage(AttackData attackData)
@@ -241,6 +292,30 @@ namespace Combat
             {
                 _attackLevels.RemoveAt(_attackLevels.Count - 1);
             }
+        }
+
+        private static AttackData FindAttackById(string id, IReadOnlyList<AttackData> knownAttacks)
+        {
+            if (string.IsNullOrWhiteSpace(id) || knownAttacks == null)
+            {
+                return null;
+            }
+
+            for (int i = 0; i < knownAttacks.Count; i++)
+            {
+                AttackData attackData = knownAttacks[i];
+                if (attackData != null && GetAttackId(attackData) == id)
+                {
+                    return attackData;
+                }
+            }
+
+            return null;
+        }
+
+        private static string GetAttackId(AttackData attackData)
+        {
+            return string.IsNullOrWhiteSpace(attackData.attackName) ? attackData.name : attackData.attackName;
         }
 
         private void OnDrawGizmosSelected()
