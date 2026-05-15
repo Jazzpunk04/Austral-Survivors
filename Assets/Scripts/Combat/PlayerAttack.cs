@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Data;
 using Health;
@@ -12,6 +13,8 @@ namespace Combat
 
         private readonly List<float> _nextAttackTimes = new();
         private readonly List<int> _attackLevels = new();
+
+        public event Action<Vector2, float> AttackPerformed;
 
         private void Awake()
         {
@@ -127,13 +130,21 @@ namespace Combat
                 return false;
             }
 
+            Vector2 attackDirection = ((Vector2)target.transform.position - (Vector2)transform.position).normalized;
+            if (attackDirection == Vector2.zero)
+            {
+                attackDirection = Vector2.right;
+            }
+
             if (attackData.projectilePrefab != null)
             {
                 ShootProjectile(attackData, target.transform, GetScaledDamage(attackData));
+                AttackPerformed?.Invoke(attackDirection, attackData.attackSpriteDuration);
                 return true;
             }
 
             ((IDamageable)target).TakeDamage(GetScaledDamage(attackData), transform);
+            AttackPerformed?.Invoke(attackDirection, attackData.attackSpriteDuration);
             return true;
         }
 

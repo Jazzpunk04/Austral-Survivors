@@ -16,6 +16,7 @@ namespace Enemies
         [SerializeField] private EnemyData enemyData;
         [SerializeField] private Transform target;
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Animator animator;
         [SerializeField] private EnemyController controller;
         [SerializeField] private EnemyAttack attack;
         [SerializeField] private MovementHandler movementHandler;
@@ -53,6 +54,11 @@ namespace Enemies
                 spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             }
 
+            if (animator == null)
+            {
+                animator = GetComponentInChildren<Animator>();
+            }
+
             if (controller == null)
             {
                 controller = GetComponent<EnemyController>();
@@ -76,12 +82,20 @@ namespace Enemies
 
         private void ApplyData()
         {
-            if (enemyData == null || spriteRenderer == null || enemyData.sprite == null)
+            if (enemyData == null)
             {
                 return;
             }
 
-            spriteRenderer.sprite = enemyData.sprite;
+            if (animator != null)
+            {
+                animator.runtimeAnimatorController = enemyData.animatorController;
+            }
+
+            if ((animator == null || animator.runtimeAnimatorController == null) && spriteRenderer != null && enemyData.sprite != null)
+            {
+                spriteRenderer.sprite = enemyData.sprite;
+            }
         }
         
         private Coroutine _spriteRoutine;
@@ -89,6 +103,12 @@ namespace Enemies
         public void ShowAttackSprite(AttackData attackData)
         {
             if (attackData == null || enemyData.attackSprite == null || spriteRenderer == null)
+            {
+                return;
+            }
+
+            Animator animator = GetComponentInChildren<Animator>();
+            if (animator != null && animator.runtimeAnimatorController != null)
             {
                 return;
             }

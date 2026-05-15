@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9174931371530566173}
   - component: {fileID: 9077721420427256143}
+  - component: {fileID: 22794213065737642}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -91,6 +92,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &22794213065737642
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988773752765541684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0a69dd36394fb8419f777cec904f5fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1188277261981144186
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,9 +127,9 @@ GameObject:
   - component: {fileID: 7472584349337415853}
   - component: {fileID: 758832324033696898}
   - component: {fileID: 6791589522397224104}
+  - component: {fileID: 6323419038094821152}
   - component: {fileID: 4483194759283782236}
   - component: {fileID: 2215590310000000001}
-  - component: {fileID: 2215590310000000002}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -145,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Input.PlayerController
   inputHandler: {fileID: 0}
   movementHandler: {fileID: 7472584349337415853}
+  playerAnimation: {fileID: 6323419038094821152}
 --- !u!114 &7472584349337415853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +213,22 @@ MonoBehaviour:
   equippedAttacks:
   - {fileID: 11400000, guid: ebfdfa589b2e1a641871c3f04454bf5d, type: 2}
   playerStats: {fileID: 2215590310000000001}
+--- !u!114 &6323419038094821152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188277261981144186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e0db7b0075997479586c839eb05c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimations.PlayerAnimation
+  animator: {fileID: 22794213065737642}
+  playerAttack: {fileID: 6791589522397224104}
+  movementDeadZone: 0.1
+  minimumAttackDuration: 0.1
 --- !u!114 &4483194759283782236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,27 +263,6 @@ MonoBehaviour:
   maxHealthPerLevel: 2
   damageMultiplierPerLevel: 0.1
   moveSpeedMultiplierPerLevel: 0.05
---- !u!114 &2215590310000000002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188277261981144186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bf883945114f7fba9713475c37801c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Experience.LevelUpPopupUI
-  playerExperience: {fileID: 4483194759283782236}
-  playerAttack: {fileID: 6791589522397224104}
-  popupView: {fileID: 0}
-  maxOptions: 3
-  pauseGameWhileChoosing: 1
-  availableAttacks:
-  - {fileID: 11400000, guid: 525c7316478f76d488f11825f22233b4, type: 2}
-  - {fileID: 11400000, guid: 3eb26533eada5df4da5236d76272fe39, type: 2}
-  - {fileID: 11400000, guid: ebfdfa589b2e1a641871c3f04454bf5d, type: 2}
 --- !u!1 &2657018373559057000
 GameObject:
   m_ObjectHideFlags: 0

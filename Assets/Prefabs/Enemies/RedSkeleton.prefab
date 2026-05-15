@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 509528864308013629}
   - component: {fileID: 7511686256204643693}
   - component: {fileID: 7162977771791875783}
+  - component: {fileID: 6323419038094821153}
   - component: {fileID: 863181213000634170}
   - component: {fileID: 5397655358053566255}
   - component: {fileID: 7094828853303475819}
@@ -183,11 +184,30 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 46f5301c606fa1b49b6ff1f0fc07f04c, type: 2}
   target: {fileID: 0}
   spriteRenderer: {fileID: 7616366154676518840}
+  animator: {fileID: 0}
   controller: {fileID: 1730502913947217788}
   attack: {fileID: 7511686256204643693}
   movementHandler: {fileID: 509528864308013629}
   movementPolicy: {fileID: 11400000, guid: d545aebc58d3558409867721944b972d, type: 2}
   enemyHealth: {fileID: 863181213000634170}
+--- !u!114 &6323419038094821153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225036535309267549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5b6c7d8e9f4012a3b4c5d6e7f80910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimations.EnemyAnimation
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 7616366154676518840}
+  enemyAttack: {fileID: 7511686256204643693}
+  movementDeadZone: 0.1
+  minimumAttackDuration: 0.1
+  flipWhenFacingLeft: 1
 --- !u!114 &863181213000634170
 MonoBehaviour:
   m_ObjectHideFlags: 0
