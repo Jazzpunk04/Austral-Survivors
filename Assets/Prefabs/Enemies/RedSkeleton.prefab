@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6655934114928076310}
   - component: {fileID: 7616366154676518840}
+  - component: {fileID: 7044366907851725821}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8054786874749993974, guid: 9009c5889e1ca0a41b8a9e547cef8d42, type: 3}
-  m_Color: {r: 1, g: 0.096226394, b: 0.096226394, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,6 +92,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &7044366907851725821
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094334824535820364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ae0233bf60f16c45a2d5321b2e53bd3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2225036535309267549
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Input.MovementHandler
   speedData: {fileID: 11400000, guid: a74a5c0eec733c74d95b842cc32ce16e, type: 2}
+  playerStats: {fileID: 0}
 --- !u!114 &7511686256204643693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +208,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 46f5301c606fa1b49b6ff1f0fc07f04c, type: 2}
   target: {fileID: 0}
   spriteRenderer: {fileID: 7616366154676518840}
-  animator: {fileID: 0}
+  animator: {fileID: 7044366907851725821}
   controller: {fileID: 1730502913947217788}
   attack: {fileID: 7511686256204643693}
   movementHandler: {fileID: 509528864308013629}
@@ -202,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5b6c7d8e9f4012a3b4c5d6e7f80910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimations.EnemyAnimation
-  animator: {fileID: 0}
+  animator: {fileID: 7044366907851725821}
   spriteRenderer: {fileID: 7616366154676518840}
   enemyAttack: {fileID: 7511686256204643693}
   movementDeadZone: 0.1

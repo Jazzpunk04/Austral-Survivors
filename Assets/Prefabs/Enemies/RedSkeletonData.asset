@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Skeleton
   sprite: {fileID: -8054786874749993974, guid: 9009c5889e1ca0a41b8a9e547cef8d42, type: 3}
   attackSprite: {fileID: -2637764417314834933, guid: 9009c5889e1ca0a41b8a9e547cef8d42, type: 3}
-  animatorController: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: 5ae0233bf60f16c45a2d5321b2e53bd3, type: 2}
   maxHealth: 15
   experienceReward: 5
   attackData: {fileID: 11400000, guid: 3eb26533eada5df4da5236d76272fe39, type: 2}
