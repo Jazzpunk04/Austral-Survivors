@@ -279,6 +279,8 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 11cab4890fa9c414d9641efc8a27a26b, type: 2}
   - {fileID: 11400000, guid: 41d8cdea140ee7843ba4085771b02f66, type: 2}
+  - {fileID: 11400000, guid: 3022204f840528c44b3dd9d6663ebdbe, type: 2}
+  - {fileID: 11400000, guid: 8c8818f5f708fd84eb5e938dc7efcfe9, type: 2}
   delayBetweenEnemies: 1
   delayBetweenWaves: 3
   playerTarget: {fileID: 1472329588}
