@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Combat;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Experience
 {
@@ -35,7 +36,24 @@ namespace Experience
 
         private void OnEnable()
         {
-            playerExperience.LeveledUp += HandleLeveledUp;
+            SceneManager.sceneLoaded += TryGetComponents;
+        }
+
+        void TryGetComponents(Scene scene, LoadSceneMode mode)
+        {
+            var player = GameObject.Find("Player");
+            if (player != null)
+            {
+                playerExperience = player.GetComponent<PlayerExperience>();
+                playerAttack = player.GetComponent<PlayerAttack>();
+                playerExperience.LeveledUp += HandleLeveledUp;
+
+            }
+            var lvlpopup = GameObject.Find("LevelUpPopup");
+            if (lvlpopup != null)
+            {
+                popupView = lvlpopup.GetComponent<LevelUpPopupView>();
+            }
         }
 
         private void OnDisable()
