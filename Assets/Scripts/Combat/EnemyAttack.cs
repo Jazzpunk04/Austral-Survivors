@@ -12,6 +12,8 @@ namespace Combat
 
         private float _nextAttackTime;
 
+        [SerializeField] private AudioSource attackSfx;
+
         public event Action<Vector2, float> AttackPerformed;
 
         private void Awake()
@@ -63,6 +65,7 @@ namespace Combat
 
             damageable.TakeDamage(attackData.damage);
             enemy.ShowAttackSprite(attackData);
+            attackSfx.Play();
             AttackPerformed?.Invoke(attackDirection, attackData.attackSpriteDuration);
             _nextAttackTime = Time.time + attackData.cooldown;
             return true;

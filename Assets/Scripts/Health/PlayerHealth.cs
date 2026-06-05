@@ -1,5 +1,6 @@
 using Data;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Health
@@ -9,6 +10,8 @@ namespace Health
         [SerializeField] private int maxHealth = 10;
         [SerializeField] private Image hpBar;
         [SerializeField] private PlayerStats playerStats;
+
+        public UnityEvent OnDeath;
 
         private int _currentHealth;
 
@@ -70,6 +73,7 @@ namespace Health
 
             if (_currentHealth <= 0)
             {
+                OnDeath?.Invoke();
                 Debug.Log("Player died");
             }
         }

@@ -10,6 +10,7 @@ namespace Combat
     {
         [SerializeField] private List<AttackData> equippedAttacks = new();
         [SerializeField] private PlayerStats playerStats;
+        [SerializeField] private AudioSource attackSfx;
 
         private readonly List<float> _nextAttackTimes = new();
         private readonly List<int> _attackLevels = new();
@@ -254,6 +255,7 @@ namespace Combat
                 attackData.projectileLifetime,
                 attackData.targetLayer,
                 transform);
+            attackSfx.Play();
         }
 
         private int GetScaledDamage(AttackData attackData)
